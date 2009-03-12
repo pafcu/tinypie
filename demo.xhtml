@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN" "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg-flat.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>  
+<head>
+<title>TinyPie demo</title>
+<script type='text/javascript' src='tinypie.js'></script>
+<script type='text/javascript'><![CDATA[
+var slices=[];
+function update() {
+	var chart = document.getElementById('chart');
+	chart.replaceChild(TinyPie.piechart(slices),chart.firstChild);
+}
+function addSlice(value,color) {
+	slices[slices.length]=[value*1,color];
+	var opts=document.getElementById('slices').options;
+	opts[opts.length]=new Option(value+" "+color);
+}
+]]>
+</script>
+</head>
+<body>
+<div>
+<form action=''>
+<p>
+<select style='width:300px' size='5' multiple='multiple' id='slices'>
+</select>
+</p>
+<p>
+<label for='value'>Value:</label> <input type='text' name='value' id='value' value='1'/><br/>
+<label for='color'>Color:</label> <input type='text' name='color' id='color' value='#ff0000'/>
+</p>
+<p>
+<button type='button' onclick='addSlice(document.getElementById("value").value,document.getElementById("color").value);update();'>Add</button>
+</p>
+</form>
+</div>
+<div id='chart' style='width:500px;height:500px;'>
+</div>
+</body>
+</html>

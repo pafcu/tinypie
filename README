@@ -1,0 +1,5 @@
+TinyPie is a "library" for plotting pie charts in JavaScript. The reason for the quotation marks is simple, currently the API consists of a single function: TinyPie.piechart([[value1,color1],[value2,color2],..]) which returns an SVG tree containing the pie chart. See demo.xhtml for a demo.
+
+Due to the usage of SVG this library will probably not work correctly in Internet Explorer, but most other reasonably modern browsers should work.
+
+This library was written to scratch an itch. New major features (especially new chart types) will probably not be added. Feel free to fork and modify to your heart's content.
